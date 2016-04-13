@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">App</string>
+    <string name="action_settings">Settings</string>
+
+    <!--strings related to mainActivity-->
+    <!-- bottom buttons-->
+    <string name="menu">Menu</string>
+    <string name="restaurant">Restaurant</string>
+    <string name="order">Order</string>
+    <string name="user">User</string>
+
+    <!-- top buttons-->
+    <string name="plate">Plate</string>
+    <string name="deals">Deals</string>
+    <string name="offers">offers</string>
+
+    <!--user profile-->
+    <string name="userID">User ID</string>
+    <string name="wallet">Wallet</string>
+    <string name="settings">Settings</string>
+</resources>

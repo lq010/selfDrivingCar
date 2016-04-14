@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">App</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings" translatable="false">Settings</string>
 
     <!--strings related to mainActivity-->
     <!-- bottom buttons-->
@@ -14,8 +14,19 @@
     <string name="deals">Deals</string>
     <string name="offers">offers</string>
 
-    <!--user profile-->
+    <!-- myInfo activity-->
+    <string name="Me">Me</string>
+    <string name="profile_photo">Profile Photo</string>
+    <string name="Name">Name</string>
+    <string name="save">Save</string>
+
+    <!--user profile fragment-->
     <string name="userID">User ID</string>
     <string name="wallet">Wallet</string>
     <string name="settings">Settings</string>
+
+    <!--pop up window-->
+    <string name="takephoto">Take Photo</string>
+    <string name="choosephoto">Choose from Photos</string>
+    <string name="cancel">Cancel</string>
 </resources>

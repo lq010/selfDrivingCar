@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 
 public class Storage {
 	private static SharedPreferences getSharedPreferences(Context context){
-		SharedPreferences sharedPreferences = context.getSharedPreferences("userInfo", Context.MODE_WORLD_READABLE);
+		SharedPreferences sharedPreferences = context.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 		return sharedPreferences;
 	}
 	

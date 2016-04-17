@@ -29,4 +29,40 @@
     <string name="takephoto">Take Photo</string>
     <string name="choosephoto">Choose from Photos</string>
     <string name="cancel">Cancel</string>
+
+    <!--toolbar menus-->
+    <string name="app_menu">Menu</string>
+    <string name="toolbar_menu_menu_text">menus</string>
+    <string name="toolbar_menu_plate_text">plates</string>
+    <string name="toolbar_menu_deals_text">deals</string>
+    <string name="toolbar_menu_offer_text">offers</string>
+
+
+    <!--for sub tab(menu)-->
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsDividerColor" format="color" />
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsShouldExpand" format="boolean" />
+        <attr name="pstsTextAllCaps" format="boolean" />
+        <attr name="selectedTabTextColor" format="color" />
+    </declare-styleable>
+
+    <!-- java, submenu-->
+    <string name="addmenu">Add New Menu</string>
+    <string name="adddeal">Add Deal</string>
+    <string name="addplate">Add Plate</string>
+    <string name="isselling">Is Selling</string>
+    <string name="search">Search</string>
+
+    <!--activity add menu-->
+    <string name="menudescription">Description</string>
+    <string name="menuname">Menu</string>
+    <string name="price">Price € </string>
 </resources>

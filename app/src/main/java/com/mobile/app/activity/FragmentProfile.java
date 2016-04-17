@@ -77,7 +77,8 @@ public class FragmentProfile  extends Fragment {
 
             @Override
             public void onClick(View v) {
-                // startActivity(new Intent(getActivity(), SettingActivity.class));// TODO: 13/04/16 change to SettingActivity
+                // startActivity(new Intent(getActivity(), SettingActivity.class));
+                // TODO: 13/04/16 change to SettingActivity
             }
 
         });
@@ -100,14 +101,14 @@ public class FragmentProfile  extends Fragment {
                 iv_userPhoto.setImageBitmap(bmp);
             }
 
-            tv_username = (TextView) re_myinfo.findViewById(R.id.tv_name);
-            tv_userId = (TextView) re_myinfo.findViewById(R.id.text_userId);
+                tv_username = (TextView) re_myinfo.findViewById(R.id.tv_name);
+                tv_userId = (TextView) re_myinfo.findViewById(R.id.text_userId);
 
-            try{
-                username = Storage.getString(this.getActivity(),"username");
-            }catch(Exception e){
-                Log.e("Storage",e.toString());
-            }
+                try{
+                    username = Storage.getString(this.getActivity(),"username");
+                }catch(Exception e){
+                    Log.e("Storage",e.toString());
+                }
 
             if(username!=null&&username!="")
                 tv_username.setText(username);

@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -22,14 +23,16 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.mobile.app.R;
 
-public class MainActivity extends AppCompatActivity implements OnClickListener {
+import java.io.File;
+
+public class MainActivity extends AppCompatActivity  {
 
     //bottom buttons
     private ImageView[] imageButtons;
-//    private RelativeLayout bot_menu;
-//    private RelativeLayout bot_restaurant;
-//    private RelativeLayout bot_order;
-//    private RelativeLayout bot_user;
+    private RelativeLayout bot_menu;
+    private RelativeLayout bot_restaurant;
+    private RelativeLayout bot_order;
+    private RelativeLayout bot_user;
 
     //unread orders number
     private TextView unreadOrder;
@@ -39,7 +42,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     private Fragment[] fragments;
     private FragmentMenu fragmentMenu;
-    // private FragmentRestaurant
+    private FragmentReviews fragmentReviews;
+    private FragmentOrders fragmentOrders;
     private FragmentProfile fragmentProfile;
 
     private TextView[] textViews;
@@ -56,6 +60,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        File sd= Environment.getExternalStorageDirectory();
+        String path=sd.getPath()+"/restaurant";
+        File file=new File(path);
+        if(!file.exists())
+            file.mkdir();
         initViews();
         fragmentManager = getFragmentManager();
 
@@ -78,11 +88,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private void initViews() {
 
 
+        bot_menu = (RelativeLayout) findViewById(R.id.bot_menu) ;
+        bot_restaurant = (RelativeLayout) findViewById(R.id.bot_restaurant);
+        bot_order = (RelativeLayout) findViewById(R.id.bot_order);
+        bot_user = (RelativeLayout) findViewById(R.id.bot_user);
+
         unreadOrder = (TextView) findViewById(R.id.unread_orders);
 
         fragmentMenu = new FragmentMenu();
+        fragmentOrders = new FragmentOrders();
+        fragmentReviews = new FragmentReviews();
         fragmentProfile = new FragmentProfile();
-        fragments = new Fragment[] {fragmentMenu,fragmentProfile };
+        fragments = new Fragment[] {fragmentMenu,fragmentReviews,fragmentOrders,fragmentProfile };
 
         imageButtons = new ImageView[4];
         imageButtons[0] = (ImageView) findViewById(R.id.img_menu);
@@ -107,18 +124,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         textViews[3] = (TextView) findViewById(R.id.text_user);
         textViews[0].setTextColor(0xFF45C01A);
         getFragmentManager().beginTransaction()
-//                .add(R.id.fragment_container,fragmentMenu)
-//                .add(R.id.fragment_container,fragmentProfile)
-//                .add(R.id.fragment_container,fragmentProfile)
+                .add(R.id.fragment_container,fragmentMenu)
+                .add(R.id.fragment_container,fragmentReviews)
+                .add(R.id.fragment_container,fragmentOrders)
                 .add(R.id.fragment_container,fragmentProfile)
-//                .hide(fragmentProfile).hide(fragmentProfile)
-                .hide(fragmentProfile).show(fragmentProfile).commit();
-
+                .hide(fragmentProfile).hide(fragmentReviews)
+                .hide(fragmentOrders).show(fragmentMenu).commit();
+        currentTabIndex = 0;
 
     }
 
-    @Override
-    public void onClick(View v) {
+
+    public void onTabClicked(View v) {
         switch ((v.getId())) {
             case R.id.bot_menu:
                 index = 0;

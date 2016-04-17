@@ -3,6 +3,8 @@ package com.mobile.app;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.util.List;
+
 public class Storage {
 	private static SharedPreferences getSharedPreferences(Context context){
 		SharedPreferences sharedPreferences = context.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
@@ -18,6 +20,8 @@ public class Storage {
 	public static String getString(Context context, String key){
 		return getSharedPreferences(context).getString(key, "");
 	}
+
+
 	
 	public static void removeString(Context context,String key){
 		SharedPreferences sharedPreferences = getSharedPreferences(context);

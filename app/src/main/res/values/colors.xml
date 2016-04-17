@@ -3,10 +3,21 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
+    <color name="red">#FF0000</color>
 
     <!-- mainActivity-->
     <color name="common_top_bar_gray">#22292c</color>
     <color name="bot_buttons">#9A9A9A</color>
+
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGray">#353333</color>
+    <color name="colorLightCray">#eeeeee</color>
+    <color name="colorBlue">#f7279bbe</color>
+    <color name="colorLightBlue">#ced2d7</color>
+    <color name="colorToolbarBottom">#2b78e4</color>
+    <color name="colorDarkBlue">#2f2287</color>
+    <color name="colorDarKRed">#e422bd</color>
 
 </resources>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/re_parent"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/btn_list_item_bg"
+        android:clickable="true" >
+
+        <RelativeLayout
+            android:id="@+id/shouwMenuImg"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/iv_show_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@drawable/add" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/show_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/shouwMenuImg"
+            android:text="@string/menuname"
+            android:textColor="#353535"
+            android:textSize="50sp" />
+
+
+        <TextView
+            android:id="@+id/shoe_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+
+
+            android:layout_margin="12dp"
+            android:text="@string/price"
+            android:textColor="#353535"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_menu"
+
+            android:layout_toRightOf="@id/shouwMenuImg"
+
+            android:orientation="horizontal"
+            android:paddingRight="30dp" >
+
+
+
+            <TextView
+                android:id="@+id/tv_showdescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@string/menudescription"
+                android:textColor="#AAAAAA"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#dadada" />
+    </RelativeLayout>
+
+</RelativeLayout>

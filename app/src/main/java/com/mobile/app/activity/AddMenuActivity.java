@@ -38,7 +38,10 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
     private SelectPicPopupWindow menuWindow;
     private String urlpath;
 
+/*
 
+
+ */
     private static final int REQUESTCODE_PICK = 0;
     private static final int REQUESTCODE_TAKE = 1;
     private static final int REQUESTCODE_CUTTING = 2;
@@ -95,35 +98,36 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
         }
     };
 
-    private void storage(){
-        Storage.saveString(this,"nemuname", menuname.getText().toString().trim());
-        Storage.saveString(this,"price", price.getText().toString().trim());
-        Storage.saveString(this,"description", description.getText().toString().trim());
+    private void storage() {
+        Storage.saveString(this, "nemuname", menuname.getText().toString().trim());
+        Storage.saveString(this, "price", price.getText().toString().trim());
+        Storage.saveString(this, "description", description.getText().toString().trim());
         Toast.makeText(AddMenuActivity.this, "Saved successfully",
                 Toast.LENGTH_LONG).show();
         String mname = menuname.getText().toString().trim();
         String mprice = price.getText().toString().trim();
         String mdescription = description.getText().toString().trim();
-        if(mname.equals(null)||mname.equals("")){
+        if (mname.equals(null) || mname.equals("")) {
             menuname.requestFocus();
             menuname.setSelected(true);
             menuname.setError("please entry a menu");
         }
-        if(mprice.equals(null)||mprice.equals("")){
+        if (mprice.equals(null) || mprice.equals("")) {
             price.requestFocus();
             price.setSelected(true);
             price.setError("please entry the price");
         }
-        if(mdescription.equals(null)||mdescription.equals("")){
+        if (mdescription.equals(null) || mdescription.equals("")) {
             description.requestFocus();
             description.setSelected(true);
             description.setError("please entry description");
         }
         DatabaseUtil dbUtil = new DatabaseUtil(this);
         dbUtil.open();
-        dbUtil.createMENU(mname,mprice,mdescription,urlpath);
+        dbUtil.createMENU(mname, mprice, mdescription, urlpath);
         dbUtil.close();
     }
+
     @Override
     public void onClick(View v) {
         switch ((v.getId())) {
